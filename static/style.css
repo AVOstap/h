@@ -1,0 +1,124 @@
+@font-face {
+  font-family: icon;
+  font-weight: 400;
+  src: url(Icons.ttf);
+  }
+  
+
+* {
+    margin:0px;
+    box-sizing: border-box;
+	/*border: 1px dotted red;*/
+}
+.body {
+    font-size: 15px;
+    line-height: 20px;
+    font-family: 'Roboto',Arial,sans-serif;
+
+}
+
+.main {
+    height:100vh;
+    background: url(space-hubble.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0 50px;
+}
+.goroLeft {
+    
+    padding: 0 25px;
+    height: 100vh;
+    display: table-cell;
+    vertical-align: middle;
+
+}
+.goroImg {
+    margin: auto auto;
+    width: 180px;
+    height: 180px;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 50%;
+    text-align: center;
+}
+
+.goroRight {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: table-cell;
+    vertical-align: middle;
+     
+}
+.date {
+    position: relative;
+}
+.day {
+
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    padding-top: 45px;
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-weight: 300;
+    font-size: 60px;
+    line-height: 65px;
+}
+.month {
+    display: block;
+    margin-top: 5px;
+    font-size: 16px;
+    line-height: 18px;
+    text-transform: uppercase;
+}
+.content {
+    height: 400px;
+    width: 700px;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 25px;
+}
+.header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.spanHeader {
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 36px;
+    color: white;
+}
+.links {
+        text-align: center;
+        margin-bottom: 10px;
+}
+.inlineLinks {
+    display: inline-block;
+}
+.link { 
+    margin-left: 4px;
+    color: white;
+    text-decoration: none;
+}
+.link:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid transparent;
+    border-radius: 3px;
+}
+.divText {
+    padding: 10px;
+}
+.text {
+    color: white;
+    font-weight: 400;
+    font-size: 1.1em;
+    line-height: 20px;
+}
+.icon {
+        font-family: icon;
+}
+.divBack {
+    text-align: right;
+}
+
+
