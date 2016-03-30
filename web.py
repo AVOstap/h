@@ -1,6 +1,6 @@
 from bottle import route, run, view, static_file
 import datetime
-from horo import openFile
+from horo import get_sentence_generator
 
 zodiacDict = {'Aries': ('Овен', 'a'),
               'Taurus': ('Телец', 'b'),
@@ -32,13 +32,13 @@ month = {1: "января",
 @route('/')
 @view('view')
 def index():
-    return createDict()
+    return create_response()
 
 
 @route('/<zodiacName>')
 @view('view')
 def zodiacPage(zodiacName):
-    return createDict(zodiacName)
+    return create_response(zodiacName)
 
 
 @route('/static/<filename:path>')
@@ -46,9 +46,7 @@ def send_static(filename):
     return static_file(filename, root='./static')
 
 
-sentenceGen = openFile('h.txt')
-
-def createDict(zodiacName = ''):
+def create_response(zodiacName =''):
     """
         Create response dictionary for index (zodiacName = Null) and zodiac page
     :type zodiacName: dict
@@ -58,7 +56,7 @@ def createDict(zodiacName = ''):
     if zodiacName:
         responseDict['title'] = zodiacName
         responseDict['header'] = "{}. {} {}".format(zodiacDict[zodiacName][0], now.day, month[now.month])
-        responseDict['text'] = sentenceGen.getText()
+        responseDict['text'] = sentenceGen.generate_text()
         responseDict['day'] = zodiacDict[zodiacName][1]
     else:
         responseDict['day'] = now.day
@@ -67,5 +65,6 @@ def createDict(zodiacName = ''):
         responseDict['zodiac'] = [(zodiacDict[z][0], z) for z in zodiacDict.keys()]
     return responseDict
 
+sentenceGen = get_sentence_generator('h.txt')
 
 run(host='localhost', port=8080, debug=True)
