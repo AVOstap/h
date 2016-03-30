@@ -2,6 +2,7 @@
 <head>
 	<title>{{get('title','Horoscope')}}</title>
     <link type="text/css" rel="stylesheet" href="static/style.css">
+    <link type="image/x-icon" rel="shortcut icon" href="static/favicon.ico">
 </head>
 
 <body>
