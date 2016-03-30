@@ -51,7 +51,7 @@ def send_static(filename):
 
 def create_response(zodiac=''):
     """
-        Create response dictionary for index (zodiac = Null) and zodiac page
+    Create response dictionary for index (zodiac = Null) and zodiac page
     :rtype: response: dict
     :type zodiac: str
     """
