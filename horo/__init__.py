@@ -30,7 +30,7 @@ class SentenceGenerator:
         return text
 
 
-def get_sentence_generator(file_name: str)-> "SentenceGenerator":
+def get_sentence_generator(file_name: str) -> SentenceGenerator:
     with open(file_name, encoding="utf8") as file:
         text = file.read()
 
@@ -64,7 +64,3 @@ def get_sentence_generator(file_name: str)-> "SentenceGenerator":
             ppw, pw = pw, word
 
     return SentenceGenerator(words_chain, all_start_words)
-
-if __name__ == '__main__':
-    seq = get_sentence_generator('../h.txt')
-    print(seq.generate_text(3))
